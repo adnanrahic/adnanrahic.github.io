@@ -8,8 +8,8 @@
 	homeRoutes.$inject = ['$stateProvider'];
 	function homeRoutes($stateProvider) {
 		var landingState = {
-			name: 'home',
-			url: '/home',
+			name: 'landing',
+			url: '/',
 			templateUrl: 'home.html',
 			controller: 'homeController',
 			controllerAs: 'vm'
