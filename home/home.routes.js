@@ -10,14 +10,14 @@
 		var landingState = {
 			name: 'landing',
 			url: '/',
-			templateUrl: 'home.html',
+			templateUrl: 'home/home.html',
 			controller: 'homeController',
 			controllerAs: 'vm'
 		}
 		var homeState = {
 			name: 'home',
 			url: '/home',
-			templateUrl: 'home.html',
+			templateUrl: 'home/home.html',
 			controller: 'homeController',
 			controllerAs: 'vm'
 		}
