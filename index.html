@@ -1,56 +1,64 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
+<html ng-app="app">
+
+<head>
+
+    <meta name="fragment" content="!">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Adnan Rahić | Portfolio</title>
-  <meta name="author" content="Adnan Rahić">
-  <meta name="description" content="Who am I?">
-  <meta name="keywords" content="adnanrahic">
-  <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://adnanrahic.github.io/cdn-scrollnav/scrolling-nav.css">
-  <link rel="stylesheet" href="/style.css" type="text/css">
+    <title>My Blog</title>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://adnanrahic.github.io/cdn-scrollnav/jquery.easing.min.js"></script>
-  <script src="https://adnanrahic.github.io/cdn-scrollnav/scrolling-nav.js"></script>
+    <!-- Vendor CSS Start -->
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Vendor CSS End -->
+
+    <!-- Theme CSS -->
+    <link href="assets/css/clean-blog.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
 
-  </head>
-  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    
+
+</head>
+
+<body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                    Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Cool_TV_logo_2004.svg/2000px-Cool_TV_logo_2004.svg.png" alt="logo" width="30" /></a>
+                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a class="page-scroll" href="#page-top"></a>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">Home</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a href="about.html">About</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
+                        <a href="post.html">Sample Post</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a href="contact.html">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -58,136 +66,75 @@
         </div>
         <!-- /.container -->
     </nav>
-  
-    <!-- intro Section -->
-    <section id="" class="intro-section">
-        <div class="image">
-          <h1 class="intro-heading">Be the <span class="text-bold">best</span> you can be.</h1>
-          <h3 class="white-text">What we think, we become.</h3>
-          <h5 class="white-text"><i>- Buddha</i></h5>
-        </div>
-    </section>
-  
-    <!-- About Section -->
-    <section id="about" class="about-section bg-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Who <span class="text-light">am I</span>?</h1>
-                </div>
-                <div class="col-lg-4">
-                    <img class="img-responsive img-rounded img-thumbnail" src="https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/63988_453197861524977_8853803048420935512_n.jpg?oh=4af8d4809a035c8921bb0768b850cea5&oe=586C0EC8" alt="Adnan Rahic" width=200 />
-                </div>
-                <div class="col-lg-8">
-                  <p class="about-me-paragraph">Goal oriented and dedicated developer currently working as a Software Engineer on a start-up based out of Sarajevo. As a perfectionist he ensures projects and deadlines are always on track while upholding "laid back" communication with co-workers and clients.</p>
-                  <p class="about-me-paragraph">An avid learner, constantly trying to improve upon himself, regularly attending courses, both online and in person, as well as teaching a "zero to hero" course about MySQL at a respected institution in his home city of Sarajevo.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Services Section -->
-    <section id="portfolio" class="portfolio-section bg-lightgrey">
-        <div class="bg-image-portfolio">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="text-light white-text"><span class="text-bold">P</span>ortfol<span class="text-bold">i</span>o</h1>
-                </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-3">
-                  <a href="http://www.bookvar.co" target=_blank>
-                    <div class="portfolio-image thumbnail">
-                      <img class="fit-image" src="https://adnanrahic.github.io/cdn-scrollnav/bookvar.png" alt="" />
-                      <div class="caption">
-                        <h3>Bookvar</h3>
-                        <p>An online learning platform with a sole purpose, to revolutionize education in Bosnia and Hezegovina.</p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="col-lg-3">
-                  <a href="http://darkpersonalcards.paperplane.io/" target=_blank>
-                    <div class="portfolio-image thumbnail">
-                      <img class="fit-image" src="https://adnanrahic.github.io/cdn-scrollnav/dark-personal-cards.PNG" alt="" />
-                      <div class="caption">
-                        <h3>Personal Cards - Dark Theme</h3>
-                        <p>My humble addition to an open source project. A dark theme for personal cards.</p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="col-lg-3">
-                  <a href="#" target=_blank>
-                    <div class="portfolio-image thumbnail">
-                      <img class="fit-image" src="http://adnanrahic.paperplane.io/img/portfolio/8.jpg" alt="" />
-                      <div class="caption">
-                        <h3>AP Lab - Training Portal</h3>
-                        <p>As part of a team of developers taking part in an internship at the prestigeous firm Authority Partners, I built a web app for tracking, creating and enrolling on online trainings and educations.</p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="col-lg-3">
-                  <a href="https://triangle-blog.herokuapp.com/" target=_blank>
-                    <div class="portfolio-image thumbnail">
-                      <img class="fit-image" src="https://adnanrahic.github.io/cdn-scrollnav/traingle-blog-compressor.png" alt="" />
-                      <div class="caption">
-                        <h3>The Triangle Blog</h3>
-                        <p>My experimental blog app, with a real time forum and other cool features, I literally just started coding. Looking forward to finishing it soon.</p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-            </div>
-        </div>
-        </div>
-    </section>
+    <section ui-view></section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section bg-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1><span class="text-light">Contact</span> me</h1>
-                    <p class="contact-paragraph">Feel free to contact me directly, through the form below. I am available for hire, consultations and coffee of course.</p>
-                </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-6">
-                  <form class="form-horizontal">
-                    <div class="form-group">
-                      <div class="col-sm-12">
-                        <input type="email" class="form-control" id="email" placeholder="email">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="col-sm-12">
-                        <input type="text" class="form-control" id="name" placeholder="full name">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="col-sm-12">
-                        <textarea class="form-control" rows="4" placeholder="message..."></textarea>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="col-sm-12">
-                        <button type="submit" class="btn btn-lg pull-right btn-send">Send</button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-                <div class="col-lg-6">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d11508.920867868164!2d18.381591799999995!3d43.8510568!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sba!4v1475179081101" width="600" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-  
+    <hr>
+
+    <!-- Footer -->
     <footer>
-      <div class="footer">Coded by Adnan Rahić</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Your Website 2016</p>
+                </div>
+            </div>
+        </div>
     </footer>
-  </body>
+
+
+
+    <!-- Vendor JS Start -->
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/234f2f5fe7.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="assets/js/clean-blog.min.js"></script>
+
+    <!-- Angular -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
+
+    <!-- Vendor JS End -->
+   
+
+    <!-- Angular Client -->
+    <script src="app.module.js"></script>
+
+
+</body>
+
 </html>
