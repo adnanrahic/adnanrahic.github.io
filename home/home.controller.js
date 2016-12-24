@@ -3,11 +3,13 @@
 	
 	angular
 		.module('app')
-		.controller('homeCtrl', homeCtrl);
+		.controller('homeController', homeController);
 
-	//homeCtrl.$inject = [];
-	function homeCtrl() {
+	//homeController.$inject = [];
+	function homeController() {
 		var vm = this;
+
+		vm.home = "Yep.";
 	}
 	
 })();
