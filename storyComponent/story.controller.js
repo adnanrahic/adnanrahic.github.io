@@ -3,13 +3,29 @@
 	
 	angular
 		.module('app')
-		.controller('contactController', contactController);
+		.controller('storyController', storyController);
 
-	//contactController.$inject = [];
-	function contactController() {
+	storyController.$inject = ['$routeParams','storyFactory'];
+	function storyController($routeParams, storyFactory) {
 		var vm = this;
+		var id = $routeParams.id;
+		vm.story = {};
 
-		vm.home = "Yep.";
+		activate();
+
+		function activate() {
+			getStory(id);
+		}
+
+		///////////////////
+
+		function getStory(id) {
+			return storyFactory.getStory(id).then(function (response) {
+				vm.story = response;
+				console.log(vm.story);
+			});
+		}
+		
 	}
 	
 })();
