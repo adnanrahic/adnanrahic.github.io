@@ -14,7 +14,7 @@
 			controller: 'aboutController',
 			controllerAs: 'vm'
 		}
-  		$stateProvider.state(landingState);
+  		$stateProvider.state(aboutState);
 	}
 	
 })();
