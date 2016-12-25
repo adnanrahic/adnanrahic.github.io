@@ -8,13 +8,13 @@
 	storyController.$inject = ['$routeParams','storyFactory'];
 	function storyController($routeParams, storyFactory) {
 		var vm = this;
-		var id = $routeParams.id;
+		vm.id = $routeParams.id;
 		vm.story = {};
 
 		activate();
 
 		function activate() {
-			getStory(id);
+			getStory(vm.id);
 		}
 
 		///////////////////
