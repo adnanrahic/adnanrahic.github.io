@@ -8,7 +8,7 @@
 	config.$inject = ['$compileProvider', '$locationProvider'];
 	function config($compileProvider, $locationProvider) {
 		$compileProvider.debugInfoEnabled(false);
-    	$locationProvider.html5Mode(true);
+    	$locationProvider.html5Mode(true).hashPrefix('!');
 	}
 
 
