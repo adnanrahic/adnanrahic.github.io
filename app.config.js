@@ -5,15 +5,13 @@
 		.module('app')
 		.config(config);
 	
-	config.$inject = ['$compileProvider', '$locationProvider', '$urlRouterProvider'];
+	config.$inject = ['$compileProvider', '$locationProvider', '$routeProvider'];
 	function config($compileProvider, $locationProvider, $urlRouterProvider) {
 		$compileProvider.debugInfoEnabled(false);
     	$locationProvider.html5Mode(true).hashPrefix('!');
-
-    	$urlRouterProvider.otherwise(function($injector) {
-		    var $state = $injector.get('$state');
-		    $state.go('/');
-		});
+    	$routeProvider.otherwise({
+	        redirectTo: "/"
+	    });	
 	}
 
 

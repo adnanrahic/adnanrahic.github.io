@@ -5,16 +5,14 @@
 		.module('app')
 		.config(homeRoutes);
 
-	homeRoutes.$inject = ['$stateProvider'];
-	function homeRoutes($stateProvider) {
-		var landingState = {
-			name: 'landing',
-			url: '/',
+	homeRoutes.$inject = ['$routeProvider'];
+	function homeRoutes($routeProvider) {
+		var landingRoute = {
 			templateUrl: 'homeComponent/home.html',
 			controller: 'homeController',
 			controllerAs: 'vm'
 		}
-  		$stateProvider.state(landingState);
+  		$routeProvider.when('/', landingRoute);
 	}
 	
 })();

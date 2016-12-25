@@ -5,16 +5,14 @@
 		.module('app')
 		.config(aboutRoutes);
 
-	aboutRoutes.$inject = ['$stateProvider'];
-	function aboutRoutes($stateProvider) {
-		var aboutState = {
-			name: 'about',
-			url: '/about',
+	aboutRoutes.$inject = ['$routeProvider'];
+	function aboutRoutes($routeProvider) {
+		var aboutRoute = {
 			templateUrl: 'aboutComponent/about.html',
 			controller: 'aboutController',
 			controllerAs: 'vm'
 		}
-  		$stateProvider.state(aboutState);
+  		$routeProvider.when('/about', aboutRoute);
 	}
 	
 })();
