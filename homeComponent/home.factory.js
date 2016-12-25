@@ -16,7 +16,7 @@
 
 		function getStories() {
 			var q = $q.defer();
-			q.resolve(stories);
+			q.resolve(Stories);
 			return q.promise;
 		}
 	}
