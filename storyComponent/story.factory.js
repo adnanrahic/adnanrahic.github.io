@@ -20,12 +20,11 @@
 			var story = {};
 			for (var i = stories.length - 1; i >= 0; i--) {
 				console.log(stories[i]);
-				
-				// if (stories[i].id == id) {
-				// 	story = stories[i];
-				// 	console.log(story);
-				// 	break;
-				// }
+				if (stories[i].id == id) {
+					story = stories[i];
+					console.log(story);
+					break;
+				}
 			}
 			q.resolve(story);
 			return q.promise;
