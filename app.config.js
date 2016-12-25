@@ -6,7 +6,7 @@
 		.config(config);
 	
 	config.$inject = ['$compileProvider', '$locationProvider', '$routeProvider'];
-	function config($compileProvider, $locationProvider, $urlRouterProvider) {
+	function config($compileProvider, $locationProvider, $routeProvider) {
 		$compileProvider.debugInfoEnabled(false);
     	$locationProvider.html5Mode(true).hashPrefix('!');
     	$routeProvider.otherwise({
