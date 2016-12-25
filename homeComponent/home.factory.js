@@ -15,8 +15,9 @@
 		///////////////
 
 		function getStories() {
+			var stories = appFactory.getStories();
 			var q = $q.defer();
-			q.resolve(Stories);
+			q.resolve(stories);
 			return q.promise;
 		}
 	}

@@ -5,8 +5,8 @@
 		.module('app')
 		.factory('storyFactory', storyFactory);
 
-	storyFactory.$inject = ['$q'];
-	function storyFactory($q) {
+	storyFactory.$inject = ['$q','appFactory'];
+	function storyFactory($q, appFactory) {
 		var factory = {
 			getStory: getStory
 		};
@@ -15,11 +15,12 @@
 		///////////////
 
 		function getStory(id) {
+			var stories = appFactory.getStories();
 			var q = $q.defer();
 			var story = {};
-			for (var i = Stories.length - 1; i >= 0; i--) {
-				if (Stories[i].id === id) {
-					story = Stories[i];
+			for (var i = stories.length - 1; i >= 0; i--) {
+				if (stories[i].id === id) {
+					story = stories[i];
 					break;
 				}
 			}
