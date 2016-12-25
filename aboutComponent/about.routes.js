@@ -5,7 +5,7 @@
 		.module('app')
 		.config(aboutRoutes);
 
-	homeRoutes.$inject = ['$stateProvider'];
+	aboutRoutes.$inject = ['$stateProvider'];
 	function aboutRoutes($stateProvider) {
 		var aboutState = {
 			name: 'about',

@@ -6,7 +6,7 @@
 		.controller('aboutController', aboutController);
 
 	//aboutController.$inject = [];
-	function homeController() {
+	function aboutController() {
 		var vm = this;
 
 		vm.home = "Yep.";
