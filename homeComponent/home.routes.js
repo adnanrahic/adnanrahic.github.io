@@ -7,12 +7,11 @@
 
 	homeRoutes.$inject = ['$routeProvider'];
 	function homeRoutes($routeProvider) {
-		var landingRoute = {
-			templateUrl: 'homeComponent/home.html',
-			controller: 'homeController',
-			controllerAs: 'vm'
-		}
-  		$routeProvider.when('/', landingRoute);
+  		$routeProvider.when("/", {
+	        controller: "homeController",
+	        controllerAs: "vm",
+	        templateUrl: "homeComponent/home.html"
+	    });
 	}
 	
 })();
