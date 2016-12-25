@@ -10,7 +10,7 @@
 		var aboutState = {
 			name: 'about',
 			url: '/about',
-			templateUrl: 'about/about.html',
+			templateUrl: 'aboutComponent/about.html',
 			controller: 'aboutController',
 			controllerAs: 'vm'
 		}

@@ -10,7 +10,7 @@
 		var landingState = {
 			name: 'landing',
 			url: '/',
-			templateUrl: 'home/home.html',
+			templateUrl: 'homeComponent/home.html',
 			controller: 'homeController',
 			controllerAs: 'vm'
 		}
