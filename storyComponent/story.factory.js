@@ -18,11 +18,14 @@
 			var stories = appFactory.getStories();
 			var q = $q.defer();
 			var story = {};
-			for (var i = stories.length - 1; i >= 0; i--) {
-				console.log(stories[i]);
+			for (var i = 1; i < stories.length; i++) {
+				console.log("FOR: ", stories[i]);
+
 				if (stories[i].id == id) {
 					story = stories[i];
-					console.log(story);
+					
+					console.log("IF [i]: ", stories[i]);
+					console.log("IF {}: ", story);
 					break;
 				}
 			}
