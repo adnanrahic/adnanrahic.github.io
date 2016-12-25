@@ -7,7 +7,7 @@
 
 	storyRoutes.$inject = ['$routeProvider'];
 	function storyRoutes($routeProvider) {
-		$routeProvider.when("/story", {
+		$routeProvider.when("/story/:id", {
 	        controller: "storyController",
 	        controllerAs: "vm",
 	        templateUrl: "storyComponent/story.html"
