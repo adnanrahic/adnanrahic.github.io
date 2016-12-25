@@ -71,7 +71,7 @@
         <!-- /.container -->
     </nav>
 
-    <section ui-view></section>
+    <section ng-view autoscroll="true"></section>
 
     <hr>
 
@@ -137,9 +137,11 @@
 
     <!-- Angular Client -->
     <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
+
+
     <script src="homeComponent/home.routes.js"></script>
     <script src="aboutComponent/about.routes.js"></script>
-    <script src="app.config.js"></script>
 
 
     <script src="responseObserver.factory.js"></script>
