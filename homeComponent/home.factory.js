@@ -5,8 +5,8 @@
 		.module('app')
 		.factory('homeFactory', homeFactory);
 
-	homeFactory.$inject = ['$q'];
-	function homeFactory($q) {
+	homeFactory.$inject = ['$q','appFactory'];
+	function homeFactory($q, appFactory) {
 		var factory = {
 			getStories: getStories
 		};
