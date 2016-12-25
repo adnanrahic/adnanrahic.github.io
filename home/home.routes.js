@@ -10,19 +10,11 @@
 		var landingState = {
 			name: 'landing',
 			url: '/',
-			templateUrl: 'homeComponent/home.html',
-			controller: 'homeController',
-			controllerAs: 'vm'
-		}
-		var homeState = {
-			name: 'home',
-			url: '/home',
-			templateUrl: 'homeComponent/home.html',
+			templateUrl: 'home/home.html',
 			controller: 'homeController',
 			controllerAs: 'vm'
 		}
   		$stateProvider.state(landingState);
-  		$stateProvider.state(homeState);
 	}
 	
 })();
