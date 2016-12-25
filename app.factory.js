@@ -43,7 +43,8 @@
 
 						Where to start? From the very beginning. The worst thing one can do is to rush the process of gaining knowledge. Nowhere is this more crucial than in programming. For without roots, a tree is nothing.
 
-					`
+					`,
+					img: "https://cdn-images-1.medium.com/max/800/1*KaGQ8A6cCqH40z0vc2TeDg.jpeg"
 				}
 			];
 			return stories;

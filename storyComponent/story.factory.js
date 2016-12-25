@@ -21,6 +21,7 @@
 			for (var i = stories.length - 1; i >= 0; i--) {
 				if (stories[i].id === id) {
 					story = stories[i];
+					console.log(story);
 					break;
 				}
 			}
