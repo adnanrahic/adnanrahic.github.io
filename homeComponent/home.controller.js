@@ -6,7 +6,7 @@
 		.controller('homeController', homeController);
 
 	homeController.$inject = ['homeFactory'];
-	function homeController() {
+	function homeController(homeFactory) {
 		var vm = this;
 		vm.stories = [];
 
