@@ -19,13 +19,8 @@
 			var q = $q.defer();
 			var story = {};
 			for (var i = 1; i < stories.length; i++) {
-				console.log("FOR: ", stories[i]);
-
 				if (stories[i].id == id) {
 					story = stories[i];
-					
-					console.log("IF [i]: ", stories[i]);
-					console.log("IF {}: ", story);
 					break;
 				}
 			}
