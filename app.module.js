@@ -3,8 +3,7 @@
 	
 	angular
 		.module('app', [
-			'ngRoute',
-			'ngSanitize'
+			'ngRoute'
 		]);
 	
 })();
