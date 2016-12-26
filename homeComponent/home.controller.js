@@ -21,8 +21,6 @@
 		function getStories() {
 			return homeFactory.getStories().then(function (response) {
 				vm.stories = response;
-				console.log(vm.stories);
-				// return vm.stories;
 			});
 		}
 
