@@ -1,13 +1,13 @@
 <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
-<header class="intro-header" style="background-image: url('{{story.img}}')">
+<header class="intro-header" style="background-image: url('{{vm.story.img}}')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>{{story.title}}</h1>
+                    <h1>{{vm.story.title}}</h1>
                     <h2 class="subheading">{{story.subtitle}}</h2>
-                    <span class="meta">Posted on {{story.createdAt}}</span>
+                    <span class="meta">Posted on {{vm.story.createdAt}}</span>
                 </div>
             </div>
         </div>
@@ -19,7 +19,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>{{story.body}}</p>
+                <p>{{vm.story.body}}</p>
             </div>
         </div>
     </div>
