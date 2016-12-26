@@ -5,8 +5,8 @@
 		.module('app')
 		.controller('storyController', storyController);
 
-	storyController.$inject = ['$routeParams','storyFactory'];
-	function storyController($routeParams, storyFactory) {
+	storyController.$inject = ['$routeParams','$sce','storyFactory'];
+	function storyController($routeParams, $sce, storyFactory) {
 		var vm = this;
 		vm.id = $routeParams.id;
 		vm.story = {};
@@ -22,6 +22,7 @@
 		function getStory(id) {
 			return storyFactory.getStory(id).then(function (response) {
 				vm.story = response;
+				vm.story.body = $sce.trustAsHtml(vm.story.body);
 				console.log(vm.story);
 			});
 		}
