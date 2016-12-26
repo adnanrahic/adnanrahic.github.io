@@ -17,12 +17,14 @@
 		function getStory(id) {
 			var stories = appFactory.getStories();
 			var q = $q.defer();
+			var story = {};
 			for (var i = 0; i < stories.length; i++) {
 				if (stories[i].id == id) {
-					q.resolve(stories[i]);
+					story = stories[i];
 					break;
 				}
 			}
+			q.resolve(story);
 			return q.promise;
 		}
 	}
