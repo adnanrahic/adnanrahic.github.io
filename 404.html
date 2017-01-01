@@ -38,7 +38,7 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <nav ng-if="view" class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
@@ -67,10 +67,10 @@
 
     <section ng-view autoscroll="true"></section>
 
-    <hr>
 
     <!-- Footer -->
-    <footer>
+    <footer ng-if="view">
+        <hr>
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
