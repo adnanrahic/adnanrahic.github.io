@@ -10,7 +10,8 @@
 		$routeProvider.when("/contact", {
 	        controller: "contactController",
 	        controllerAs: "vm",
-	        templateUrl: "contactComponent/contact.html"
+	        templateUrl: "contactComponent/contact.html",
+	        preload: true
 	    });
 	}
 	

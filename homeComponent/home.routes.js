@@ -10,7 +10,8 @@
   		$routeProvider.when("/", {
 	        controller: "homeController",
 	        controllerAs: "vm",
-	        templateUrl: "homeComponent/home.html"
+	        templateUrl: "homeComponent/home.html",
+	        preload: true
 	    });
 	}
 	

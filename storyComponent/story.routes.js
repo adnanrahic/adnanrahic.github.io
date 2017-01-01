@@ -10,7 +10,8 @@
 		$routeProvider.when("/story/:id", {
 	        controller: "storyController",
 	        controllerAs: "vm",
-	        templateUrl: "storyComponent/story.html"
+	        templateUrl: "storyComponent/story.html",
+	        preload: true
 	    });
 	}
 	

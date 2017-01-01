@@ -10,7 +10,8 @@
 		$routeProvider.when("/about", {
 	        controller: "aboutController",
 	        controllerAs: "vm",
-	        templateUrl: "aboutComponent/about.html"
+	        templateUrl: "aboutComponent/about.html",
+	        preload: true
 	    });
 	}
 	
