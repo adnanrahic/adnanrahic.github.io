@@ -23,7 +23,6 @@
 			return storyFactory.getStory(id).then(function (response) {
 				vm.story = response;
 				vm.story.body = $sce.trustAsHtml(vm.story.body);
-				console.log(vm.story);
 			});
 		}
 		
