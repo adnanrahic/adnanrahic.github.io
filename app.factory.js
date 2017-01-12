@@ -24,7 +24,7 @@
 					body: `
 						<p>The whole concept of becoming a developer is a journey. Not a single one of us who are currently working as software engineers have had a moment of clarity where we said to ourselves…</p>
 						
-						<p><i>'Yep, I’m a developer now.'</i></p>
+						<blockquote>'Yep, I’m a developer now.'</blockquote>
 						
 						<p>You might be asking yourself well what about all the abundance of courses out there. They all say the same. Learn to code in 4 weeks or less. It’s bluntly put impossible. Not because I undermine the intellectual capabilities of the average Joe, but simply because we humans have a limited capacity to process huge amounts of data. This is precisely what programming is. Every day is a challenge to solve problems, mysteries and illusions which are riddles to the average person. So how does one do this? By processing data. You have to dissect the problem using the vast data you have accumulated since the very beginning, when you started learning how to code.</p>
 
@@ -36,7 +36,7 @@
 
 						<p>Returning to the illusion of being able to learn to code in 4 weeks, there is one thing I can confirm. You can more than surely learn how to, in time, become a programmer. How to gain the instinct and learn what you need to do in order to reach your goals. In absolute certainty will you learn the core programming skills which will keep you afloat on your journey to the promised city developers strive to reach. These skills, logical, problem solving and a bit of magic voodoo witchcraft (again with the lame jokes), are what you will in time condition to perfection. You are now the blacksmith. These skills, your tools. Use them to create. Inspire and strive.</p>
 
-						<p><i>'The computer programmer is a creator of universes for which he alone is responsible. Universes of virtually unlimited complexity can be created in the form of computer programs.'<br>— Joseph Weizenbaum, Computer Power and Human Reason</i></p>
+						<blockquote>'The computer programmer is a creator of universes for which he alone is responsible. Universes of virtually unlimited complexity can be created in the form of computer programs.'<br>— Joseph Weizenbaum, Computer Power and Human Reason</blockquote>
 
 						<p>Where to start? From the very beginning. The worst thing one can do is to rush the process of gaining knowledge. Nowhere is this more crucial than in programming. For without roots, a tree is nothing.</p>
 
