@@ -1,6 +1,10 @@
 <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
-<header class="intro-header" style="background-image: url('assets/img/desk.jpeg')">
+<header class="intro-header" style="
+background: linear-gradient(to bottom right, rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('assets/img/desk.jpeg');
+background-size: cover;
+background-repeat: no-repeat;
+">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -21,7 +25,7 @@
 
 
             <div class="post-preview" ng-repeat="story in vm.stories">
-                <a href="/story/{{story.id}}">
+                <a href="/story/{{story.urlCode}}/{{story.id}}">
                     <h2 class="post-title">
                         {{story.title}}
                     </h2>
