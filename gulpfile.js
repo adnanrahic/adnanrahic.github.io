@@ -5,14 +5,9 @@ var del = require('del');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var ngAnnotate = require('gulp-ng-annotate');
-var angularOrder = require('gulp-angular-order');
 var sourcemaps = require('gulp-sourcemaps');
 var bytediff = require('gulp-bytediff');
 var cleanCSS = require('gulp-clean-css');
-var pump = require('pump');
-var gutil = require('gulp-util');
-var es6transpiler = require('gulp-es6-transpiler');
-
 
 var paths = {
 	dev: 'dev',
@@ -62,22 +57,26 @@ paths.appSrc = paths.appInit
        .concat(paths.home)
        .concat(paths.appConfig);
 
+gulp.task('dev', ['watch']);
+gulp.task('watch', ['serve'], function () {
+	gulp.watch(paths.appInit, ['copy']);
+	gulp.watch(paths.appConfig, ['copy']);
+	gulp.watch(paths.home, ['copy']);
+	gulp.watch(paths.about, ['copy']);
+	gulp.watch(paths.contact, ['copy']);
+	gulp.watch(paths.story, ['copy']);
+	gulp.watch(paths.assets, ['copy']);
+	gulp.watch(paths.templates, ['copy']);
+	gulp.watch(paths.index, ['copy']);
+});
 gulp.task('serve', ['copy'], function () {
   return gulp.src(paths.dev)
     .pipe(webserver({
       port: 3000,
+			livereload: true,
       fallback: 'index.html'
     }));
 });
-
-gulp.task('serve:dist', ['build'], function () {
-  return gulp.src(paths.dist)
-    .pipe(webserver({
-      port: 3001,
-      fallback: 'index.html'
-    }));
-});
-
 gulp.task('copy', function(){
 
 	var appInit = gulp.src(paths.appInit).pipe(gulp.dest(paths.dev));
@@ -124,6 +123,14 @@ gulp.task('copy', function(){
 	
 });
 
+
+gulp.task('serve:dist', ['build'], function () {
+  return gulp.src(paths.dist)
+    .pipe(webserver({
+      port: 3001,
+      fallback: 'index.html'
+    }));
+});
 gulp.task('build', function () {
 
 	var favicon = gulp.src(paths.favicon).pipe(gulp.dest(paths.dist));
@@ -133,7 +140,6 @@ gulp.task('build', function () {
   var dist = gulp.src(paths.appSrc)
         .pipe(sourcemaps.init())
         .pipe(concat('app.min.js'))
-        // Annotate before uglify so the code get's min'd properly.
         .pipe(ngAnnotate())
         .pipe(bytediff.start())
         .pipe(uglify({
@@ -158,6 +164,9 @@ gulp.task('build', function () {
         .pipe(gulp.dest(paths.dist));
 });
 
+gulp.task('clean', function () {
+  del([paths.dev, paths.dist]);
+});
 gulp.task('clean:dev', function () {
   del([paths.dev]);
 });
