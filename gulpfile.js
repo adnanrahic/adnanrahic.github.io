@@ -1,0 +1,166 @@
+var gulp = require('gulp');
+var webserver = require('gulp-webserver');
+var inject = require('gulp-inject');
+var del = require('del');
+var uglify = require('gulp-uglify');
+var concat = require('gulp-concat');
+var ngAnnotate = require('gulp-ng-annotate');
+var angularOrder = require('gulp-angular-order');
+var sourcemaps = require('gulp-sourcemaps');
+var bytediff = require('gulp-bytediff');
+var cleanCSS = require('gulp-clean-css');
+var pump = require('pump');
+var gutil = require('gulp-util');
+var es6transpiler = require('gulp-es6-transpiler');
+
+
+var paths = {
+	dev: 'dev',
+	devHome: 'dev/homeComponent',
+	devAbout: 'dev/aboutComponent',
+	devContact: 'dev/contactComponent',
+	devStory: 'dev/storyComponent',
+	devAssets: 'dev/assets',
+	index: 'src/index.html',
+	appInit: [
+		'src/app.module.js',
+		'src/app.factory.js'
+		],
+	appConfig: [
+		'src/app.run.js',
+		'src/app.config.js'
+		],
+	home: [
+		'src/homeComponent/home.routes.js',
+		'src/homeComponent/home.factory.js',
+		'src/homeComponent/**/*.js'
+		],
+	about: [
+		'src/aboutComponent/about.routes.js',
+		'src/aboutComponent/**/*.js'
+		],
+	contact: [
+		'src/contactComponent/contact.routes.js',
+		'src/contactComponent/**/*.js'
+		],
+	story: [
+		'src/storyComponent/story.routes.js',
+		'src/storyComponent/story.factory.js',
+		'src/storyComponent/**/*.js'
+		],
+  templates: ['src/**/*.html', '!src/index.html'],
+	assets: 'src/assets/**/*',
+	favicon: 'src/favicon.ico',
+  dist: 'dist',
+	distAssets: 'dist/assets'
+}
+
+paths.appSrc = paths.appInit
+       .concat(paths.about)
+       .concat(paths.contact)
+       .concat(paths.story)
+       .concat(paths.home)
+       .concat(paths.appConfig);
+
+gulp.task('serve', ['copy'], function () {
+  return gulp.src(paths.dev)
+    .pipe(webserver({
+      port: 3000,
+      fallback: 'index.html'
+    }));
+});
+
+gulp.task('serve:dist', ['build'], function () {
+  return gulp.src(paths.dist)
+    .pipe(webserver({
+      port: 3001,
+      fallback: 'index.html'
+    }));
+});
+
+gulp.task('copy', function(){
+
+	var appInit = gulp.src(paths.appInit).pipe(gulp.dest(paths.dev));
+	var appConfig = gulp.src(paths.appConfig).pipe(gulp.dest(paths.dev));
+	var home = gulp.src(paths.home).pipe(gulp.dest(paths.dev));
+	var about = gulp.src(paths.about).pipe(gulp.dest(paths.dev));
+	var contact = gulp.src(paths.contact).pipe(gulp.dest(paths.dev));
+	var story = gulp.src(paths.story).pipe(gulp.dest(paths.dev));
+	var assets = gulp.src(paths.assets).pipe(gulp.dest(paths.devAssets));
+	var templates = gulp.src(paths.templates).pipe(gulp.dest(paths.dev));
+	var favicon = gulp.src(paths.favicon).pipe(gulp.dest(paths.dev));
+
+	return gulp.src(paths.index)
+				.pipe(gulp.dest(paths.dev))
+				.pipe(inject(assets, {
+					relative:true,
+					name: 'assetsInject'
+				}))
+				.pipe(inject(appInit, {
+					relative:true,
+					name: 'appInitInject'
+				}))
+				.pipe(inject(home, {
+					relative:true,
+					name: 'homeInject'
+				}))
+				.pipe(inject(about, {
+					relative:true,
+					name: 'aboutInject'
+				}))
+				.pipe(inject(contact, {
+					relative:true,
+					name: 'contactInject'
+				}))
+				.pipe(inject(story, {
+					relative:true,
+					name: 'storyInject'
+				}))
+				.pipe(inject(appConfig, {
+					relative:true,
+					name: 'appConfigInject'
+				}))
+				.pipe(gulp.dest(paths.dev));
+	
+});
+
+gulp.task('build', function () {
+
+	var favicon = gulp.src(paths.favicon).pipe(gulp.dest(paths.dist));
+	var distAssets = gulp.src(paths.assets).pipe(gulp.dest(paths.distAssets));
+	var distTemplates = gulp.src(paths.templates).pipe(gulp.dest(paths.dist));
+
+  var dist = gulp.src(paths.appSrc)
+        .pipe(sourcemaps.init())
+        .pipe(concat('app.min.js'))
+        // Annotate before uglify so the code get's min'd properly.
+        .pipe(ngAnnotate())
+        .pipe(bytediff.start())
+        .pipe(uglify({
+            mangle: true
+        }))
+        .pipe(bytediff.stop())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(paths.dist));
+
+  
+  // need the index from the dist directory!!!!
+  return gulp.src(paths.index)
+				.pipe(gulp.dest(paths.dist))
+        .pipe(inject(distAssets, {
+            relative: true,
+            name: 'assetsInject'
+        }))
+        .pipe(inject(dist, {
+            relative: true,
+            name: 'distInject'
+        }))
+        .pipe(gulp.dest(paths.dist));
+});
+
+gulp.task('clean:dev', function () {
+  del([paths.dev]);
+});
+gulp.task('clean:dist', function () {
+  del([paths.dist]);
+});

@@ -1,0 +1,35 @@
+{
+  "name": "adnanrahic.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.module.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adnanrahic/adnanrahic.github.io.git"
+  },
+  "author": "Adnan Rahić",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adnanrahic/adnanrahic.github.io/issues"
+  },
+  "homepage": "https://github.com/adnanrahic/adnanrahic.github.io#readme",
+  "dependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-angular-order": "^1.1.0",
+    "gulp-bytediff": "^1.0.0",
+    "gulp-clean-css": "^3.0.4",
+    "gulp-concat": "^2.6.1",
+    "gulp-es6-transpiler": "^1.0.1",
+    "gulp-inject": "^4.2.0",
+    "gulp-ng-annotate": "^2.0.0",
+    "gulp-sourcemaps": "^2.4.1",
+    "gulp-uglify": "^2.1.2",
+    "gulp-util": "^3.0.8",
+    "gulp-webserver": "^0.9.1",
+    "pump": "^1.0.2"
+  }
+}
