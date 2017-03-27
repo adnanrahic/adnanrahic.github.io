@@ -17,6 +17,7 @@ var paths = {
 	devStory: 'dev/storyComponent',
 	devAssets: 'dev/assets',
 	index: 'src/index.html',
+	src: 'src',
 	appInit: [
 		'src/app.module.js',
 		'src/app.factory.js'
@@ -162,6 +163,66 @@ gulp.task('build', function () {
             name: 'distInject'
         }))
         .pipe(gulp.dest(paths.dist));
+});
+
+
+gulp.task('serve:src', ['inject'], function () {
+  return gulp.src(paths.src)
+    .pipe(webserver({
+      port: 3000,
+			livereload: true,
+      fallback: 'index.html'
+    }));
+});
+gulp.task('inject', function() {
+	var appInit = gulp.src(paths.appInit);
+	var appConfig = gulp.src(paths.appConfig);
+	var home = gulp.src(paths.home);
+	var about = gulp.src(paths.about);
+	var contact = gulp.src(paths.contact);
+	var story = gulp.src(paths.story);
+	var assets = gulp.src(paths.assets);
+	var templates = gulp.src(paths.templates);
+	var favicon = gulp.src(paths.favicon);
+
+	return gulp.src(paths.index)
+				.pipe(inject(assets, {
+					relative:true,
+					empty:true,
+					name: 'assetsInject'
+				}))
+				.pipe(inject(appInit, {
+					relative:true,
+					empty:true,
+					name: 'appInitInject'
+				}))
+				.pipe(inject(home, {
+					relative:true,
+					empty:true,
+					name: 'homeInject'
+				}))
+				.pipe(inject(about, {
+					relative:true,
+					empty:true,
+					name: 'aboutInject'
+				}))
+				.pipe(inject(contact, {
+					relative:true,
+					empty:true,
+					name: 'contactInject'
+				}))
+				.pipe(inject(story, {
+					relative:true,
+					empty:true,
+					name: 'storyInject'
+				}))
+				.pipe(inject(appConfig, {
+					relative:true,
+					empty:true,
+					name: 'appConfigInject'
+				}))
+				.pipe(gulp.dest(paths.src));
+	
 });
 
 gulp.task('clean', function () {
