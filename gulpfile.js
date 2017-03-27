@@ -124,7 +124,9 @@ gulp.task('copy', function(){
 	
 });
 
-
+/**
+ * serve the dist folder - simulate production server
+ */
 gulp.task('serve:dist', ['build'], function () {
   return gulp.src(paths.dist)
     .pipe(webserver({
@@ -132,6 +134,9 @@ gulp.task('serve:dist', ['build'], function () {
       fallback: 'index.html'
     }));
 });
+/**
+ * concat & minify app files
+ */
 gulp.task('build', function () {
 
 	var favicon = gulp.src(paths.favicon).pipe(gulp.dest(paths.dist));
@@ -139,33 +144,37 @@ gulp.task('build', function () {
 	var distTemplates = gulp.src(paths.templates).pipe(gulp.dest(paths.dist));
 
   var dist = gulp.src(paths.appSrc)
-        .pipe(sourcemaps.init())
-        .pipe(concat('app.min.js'))
-        .pipe(ngAnnotate())
-        .pipe(bytediff.start())
-        .pipe(uglify({
-            mangle: true
-        }))
-        .pipe(bytediff.stop())
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest(paths.dist));
+		.pipe(sourcemaps.init())
+		.pipe(concat('app.min.js'))
+		.pipe(ngAnnotate())
+		.pipe(bytediff.start())
+		.pipe(uglify({
+				mangle: true
+		}))
+		.pipe(bytediff.stop())
+		.pipe(sourcemaps.write())
+		.pipe(gulp.dest(paths.dist));
 
   
   // need the index from the dist directory!!!!
   return gulp.src(paths.index)
-				.pipe(gulp.dest(paths.dist))
-        .pipe(inject(distAssets, {
-            relative: true,
-            name: 'assetsInject'
-        }))
-        .pipe(inject(dist, {
-            relative: true,
-            name: 'distInject'
-        }))
-        .pipe(gulp.dest(paths.dist));
+		.pipe(gulp.dest(paths.dist))
+		.pipe(inject(distAssets, {
+				relative: true,
+				empty: true,
+				name: 'assetsInject'
+		}))
+		.pipe(inject(dist, {
+				relative: true,
+				empty: true
+		}))
+		.pipe(gulp.dest(paths.dist));
+
 });
 
-
+/**
+ * serve src folder
+ */
 gulp.task('serve:src', ['inject'], function () {
   return gulp.src(paths.src)
     .pipe(webserver({
@@ -174,57 +183,30 @@ gulp.task('serve:src', ['inject'], function () {
       fallback: 'index.html'
     }));
 });
+
 gulp.task('inject', function() {
-	var appInit = gulp.src(paths.appInit);
-	var appConfig = gulp.src(paths.appConfig);
-	var home = gulp.src(paths.home);
-	var about = gulp.src(paths.about);
-	var contact = gulp.src(paths.contact);
-	var story = gulp.src(paths.story);
 	var assets = gulp.src(paths.assets);
 	var templates = gulp.src(paths.templates);
 	var favicon = gulp.src(paths.favicon);
 
+	var appSrc = gulp.src(paths.appSrc);
+
 	return gulp.src(paths.index)
 				.pipe(inject(assets, {
 					relative:true,
-					empty:true,
-					name: 'assetsInject'
+					empty:true
 				}))
-				.pipe(inject(appInit, {
+				.pipe(inject(appSrc, {
 					relative:true,
-					empty:true,
-					name: 'appInitInject'
-				}))
-				.pipe(inject(home, {
-					relative:true,
-					empty:true,
-					name: 'homeInject'
-				}))
-				.pipe(inject(about, {
-					relative:true,
-					empty:true,
-					name: 'aboutInject'
-				}))
-				.pipe(inject(contact, {
-					relative:true,
-					empty:true,
-					name: 'contactInject'
-				}))
-				.pipe(inject(story, {
-					relative:true,
-					empty:true,
-					name: 'storyInject'
-				}))
-				.pipe(inject(appConfig, {
-					relative:true,
-					empty:true,
-					name: 'appConfigInject'
+					empty:true
 				}))
 				.pipe(gulp.dest(paths.src));
 	
 });
 
+/**
+ * clean tasks
+ */
 gulp.task('clean', function () {
   del([paths.dev, paths.dist]);
 });
