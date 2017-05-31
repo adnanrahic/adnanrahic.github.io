@@ -1,0 +1,188 @@
+<style>
+    .card {
+    display: inline-block;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.15);
+    position: relative;
+    margin-bottom: 50px;
+    transition: all .2s ease-in-out;
+    }
+
+    .card:hover {
+    /*box-shadow: 0 5px 22px 0 rgba(0,0,0,.25);*/
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    margin-bottom: 54px;
+    }
+
+    .image {
+    height: 200px;
+    opacity: .7;
+    overflow: hidden;
+    transition: all .2s ease-in-out;
+    }
+
+    .image:hover,
+    .card:hover .image {
+    height: 200px;
+    opacity: 1;
+    }
+
+    .text {
+    background: #FFF;
+    padding: 20px;
+    min-height: 200px;
+    }
+
+    .text p {
+    margin-bottom: 0px;
+    }
+
+    a img:hover {
+        cursor: pointer;
+    }
+</style>
+
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('assets/img/iphone-desk-laptop-notebook-min.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="page-heading">
+                    <h1>Portfolio</h1>
+                    <hr class="small">
+                    <span class="subheading">What have I been hacking on?</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <h2>Projects</h2>
+            <hr>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <a href="http://bookvar.co/" target="_blank">
+                        <div class="card">
+                            <div class="image">
+                                <img src="http://bookvar.co/images/home-header-ultra-min.jpg" width="100%">
+                            </div>
+                            <div class="text">
+                                <h3>Bookvar</h3>
+                                <p>Your stop for new knowledge.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <a href="https://komperion.com/" target="_blank">
+                        <div class="card">
+                            <div class="image">
+                                <img src="https://komperion.com/assets/images/bg-img.png" width="100%">
+                            </div>
+                            <div class="text">
+                                <h3>Komperion</h3>
+                                <p>Take the first step to knowledge with us.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <h2>Courses</h2>
+            <hr>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <a href="http://www.academy387.com/program/javascript-za-pocetnike" target="_blank">
+                        <div class="card">
+                            <div class="image">
+                                <img src="http://res.cloudinary.com/hfvfqj5vt/image/upload/c_fill,g_center,h_460,w_740/v1479397613/xz55s4v5m21mphibapiv.png" width="100%">
+                            </div>
+                            <div class="text">
+                                <h3>JavaScript for Beginners</h3>
+                                <p>Want to learn the most popular programming language of today? Then this is a course for you. It encompasses the core knowledge a striving programmer needs.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <a href="http://www.academy387.com/program/database-fundamentals-with-mysql" target="_blank">
+                        <div class="card">
+                            <div class="image">
+                                <img src="http://res.cloudinary.com/hfvfqj5vt/image/upload/c_fill,g_center,h_460,w_740/v1482334820/rowjtehdhicdkmrj1tyy.png" width="100%">
+                            </div>
+                            <div class="text">
+                                <h3>Database Fundamentals with MySQL</h3>
+                                <p>This course is aimed towards beginners with a goal for them to understand and comfortably use relational databases, using MySQL.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <h2>Workshops</h2>
+            <hr>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <a href="https://github.com/adnanrahic/mean-stack-101" target="_blank">
+                        <div class="card">
+                            <div class="image">
+                                <img src="https://scontent.flju2-1.fna.fbcdn.net/v/t1.0-9/17862660_438961569782977_2606813328513259307_n.jpg?oh=36d3dfad4f1ff93bd9902385f42da90a&oe=59AC7DA0" width="100%">
+                            </div>
+                            <div class="text">
+                                <h3>MEAN Stack</h3>
+                                <p>This workshop demonstrates the use of a Nodejs REST API with AngularJS as the frontend. Using MongoDB as a non-relational database and Gulp for workflow automation and as a build tool.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- ADD GIT WORKSHOP
+                    <div class="col-lg-6 col-md-6 col-xs-12">
+                    <a href="http://www.academy387.com/program/database-fundamentals-with-mysql" target="_blank">
+                        <div class="card">
+                            <div class="image">
+                                <img src="http://res.cloudinary.com/hfvfqj5vt/image/upload/c_fill,g_center,h_460,w_740/v1482334820/rowjtehdhicdkmrj1tyy.png" width="100%">
+                            </div>
+                            <div class="text">
+                                <h3>Database Fundamentals with MySQL</h3>
+                                <p>This course is aimed towards beginners with a goal for them to understand and comfortably use relational databases, using MySQL.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>-->
+            </div>
+
+            <h2>Blogs</h2>
+            <hr>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <a href="https://medium.com/@adnanrahic" target="_blank">
+                        <div class="card">
+                            <div class="image">
+                                <img src="assets/img/medium.png" width="100%">
+                            </div>
+                            <div class="text">
+                                <h3>Writing about tech on Medium</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <a href="https://dev.to/adnanrahic" target="_blank">
+                        <div class="card">
+                            <div class="image">
+                                <img src="assets/img/devto.jpg" width="100%">
+                            </div>
+                            <div class="text">
+                                <h3>Writing about tech on Dev.to</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

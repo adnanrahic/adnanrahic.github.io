@@ -35,6 +35,10 @@ var paths = {
 		'src/aboutComponent/about.routes.js',
 		'src/aboutComponent/**/*.js'
 		],
+	portfolio: [
+		'src/portfolioComponent/portfolio.routes.js',
+		'src/portfolioComponent/**/*.js'
+		],
 	contact: [
 		'src/contactComponent/contact.routes.js',
 		'src/contactComponent/**/*.js'
@@ -53,6 +57,7 @@ var paths = {
 
 paths.appSrc = paths.appInit
        .concat(paths.about)
+       .concat(paths.portfolio)
        .concat(paths.contact)
        .concat(paths.story)
        .concat(paths.home)
@@ -64,6 +69,7 @@ gulp.task('watch', ['serve'], function () {
 	gulp.watch(paths.appConfig, ['copy']);
 	gulp.watch(paths.home, ['copy']);
 	gulp.watch(paths.about, ['copy']);
+	gulp.watch(paths.portfolio, ['copy']);
 	gulp.watch(paths.contact, ['copy']);
 	gulp.watch(paths.story, ['copy']);
 	gulp.watch(paths.assets, ['copy']);
@@ -84,6 +90,7 @@ gulp.task('copy', function(){
 	var appConfig = gulp.src(paths.appConfig).pipe(gulp.dest(paths.dev));
 	var home = gulp.src(paths.home).pipe(gulp.dest(paths.dev));
 	var about = gulp.src(paths.about).pipe(gulp.dest(paths.dev));
+	var portfolio = gulp.src(paths.portfolio).pipe(gulp.dest(paths.dev));
 	var contact = gulp.src(paths.contact).pipe(gulp.dest(paths.dev));
 	var story = gulp.src(paths.story).pipe(gulp.dest(paths.dev));
 	var assets = gulp.src(paths.assets).pipe(gulp.dest(paths.devAssets));
@@ -111,6 +118,10 @@ gulp.task('copy', function(){
 				.pipe(inject(contact, {
 					relative:true,
 					name: 'contactInject'
+				}))
+				.pipe(inject(portfolio, {
+					relative:true,
+					name: 'portfolioInject'
 				}))
 				.pipe(inject(story, {
 					relative:true,
