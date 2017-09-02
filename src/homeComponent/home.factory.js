@@ -15,10 +15,11 @@
 		///////////////
 
 		function getStories() {
-			var stories = appFactory.getStories();
-			var q = $q.defer();
-			q.resolve(stories);
-			return q.promise;
+			return $q(function (resolve, reject) {
+				var stories = appFactory.getStories().sort(function (a, b) { return b.id - a.id; });
+				console.log(stories);
+				resolve(stories);
+			});
 		}
 	}
 	
