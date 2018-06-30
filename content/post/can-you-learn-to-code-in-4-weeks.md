@@ -12,6 +12,7 @@ categories: [
     "webdev"
 ]
 comments: true
+canonical: "https://medium.com/@adnanrahic/can-you-learn-to-code-in-4-weeks-a68441205ddd"
 ---
 
 Well, no. Isn’t it obvious? However, don’t get your spirits down, you can indeed take a huge leap in the right direction on your path of becoming a programmer.
