@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on @adnanrahic</title>
+    <link>https://adnanrahic.com/tags/</link>
+    <description>Recent content in Tags on @adnanrahic</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Coded with &lt;3 by yours truly.</copyright>
+    
+	<atom:link href="https://adnanrahic.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>
