@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "hugo -D server --disableFastRender",
-    "build": "$(npm bin)/hugo",
+    "build": "$(npm bin)/hugo && cp CNAME ./public",
     "compile": "./compile.sh",
     "lint": "$(npm bin)/standard",
     "dev": "npm run lint && npm start",
