@@ -7,12 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "hugo -D server --disableFastRender",
     "build": "$(npm bin)/hugo",
-    "build-local": "$(npm bin)/hugo",
     "compile": "./compile.sh",
     "lint": "$(npm bin)/standard",
     "dev": "npm run lint && npm start",
     "prod": "rm -rf ./public && npm run build && npm run compile && cd ./public && python -m SimpleHTTPServer",
-    "prod-no-compile": "rm -rf ./public && npm run build-local && cd ./public && python -m SimpleHTTPServer"
+    "prod-no-compile": "rm -rf ./public && npm run build && cd ./public && python -m SimpleHTTPServer"
   },
   "keywords": [],
   "author": "",

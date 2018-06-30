@@ -35,3 +35,12 @@ a:hover, a:focus {
   margin-top: 0;
   font-weight: 300;
 }
+
+.pager li>a {
+  transition: all 0.3s;
+}
+.pager li>a:hover, .pager li>a:focus {
+  color: white !important;
+  background-color: #02B875 !important;
+  border: 1px solid #02B875 !important;
+}
