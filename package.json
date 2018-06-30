@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "git subtree push --prefix public origin gh-pages",
+    "deploy": "$(npm bin)/hugo && cp CNAME ./public && git subtree push --prefix public origin master",
     "start": "hugo -D server --disableFastRender",
     "build": "$(npm bin)/hugo && cp CNAME ./public",
     "compile": "./compile.sh",
